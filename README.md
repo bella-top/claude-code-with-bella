@@ -8,8 +8,13 @@
   - 不依赖Code Embeddings: 与依赖RAG的Code Agent不同，不需要针对代码训练Embedding模型，只需要LLM模型即可使用，将类似`README`的文件作为Code Base也更像一个人在进行开发
   - 安全性：Code Base不依赖向量库，确保了不会在服务端存储向量化的代码
   
-- Bella Openapi 实现了Claude Code依赖的 `/v1/messsages` 接口。所有在Bella-Openapi中接入的LLM协议均可使用Claude Code，不仅仅支持Claude系列模型，同时支持了Openai全系列、Gemini、DeepSeek、Qwen、Doubao等主流模型。
+- Bella Openapi 
+  - 实现了Claude Code依赖的 `/v1/messsages` 接口
+  - 所有在Bella-Openapi中接入的LLM协议均可使用Claude Code，不仅仅支持Claude系列模型，同时支持了Openai全系列、Gemini、DeepSeek、Qwen、Doubao等主流模型。
+  - 可以为Claude Code使用单独的Apikey，控制成本，且每次请求产生的费用开销在日志中清晰可见
+  - 企业级用户可以在使用统一网关的同时，享受最强Code Agent的全部特性
 
+- 对比Cursor和Windsurf，Claude Code更适合异步编程的场景。Claude Code的Planning更为复杂，执行速度较慢，但是能力更强
 
 ## Dependency
 
@@ -43,7 +48,7 @@
 - 将diff工具设置为`auto`，会自动进行IDE 检测
 - 输入框执行 `/ide` 命令，检测ide是否存在
 
-## 工作流程简
+## 工作流程
 
 ### CodeBase
 - 通过`/init` 生成 `CLAUDE.md` 文件，作为每个任务的起始提示词，相当于给claude提供进行项目开发的 `README`。[示例](./CLAUDE.example.md)
