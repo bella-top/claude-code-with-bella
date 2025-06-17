@@ -85,7 +85,7 @@
  - `File Description`的生成工具可以使用：[bella-issues-bot#初始化文件记忆系统](https://github.com/bella-top/bella-issues-bot/blob/main/quick-start.md#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%87%E4%BB%B6%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F)
 
 ### file choose
-`@[filename]` 通过 `@` 选择文件，相当于帮claude code选择文件，加速推理。同时如果在终端中粘贴很长的提示词，比如一个很长的请求让claude code进行debug，可能会出现问题，可以把请求内容粘贴到一个文件里，告诉claude code读文件获取请求详情。
+`@[filename]` 通过 `@` 选择文件，加速推理。同时如果在终端中粘贴很长的提示词，比如一个很长的请求让claude code进行debug，可能会出现问题，可以把请求内容粘贴到一个文件里，告诉claude code读文件获取请求详情。
 
 - 示例： 上文json中的第三个text就是选择文件后添加的提示词，相当于告诉LLM从哪开始看起
 
@@ -103,7 +103,7 @@
 - code base: `/init` 生成 CLAUDE.md 文件，作为每个任务的起始提示词，相当于给claude提供进行项目开发的 `README`
 - 清除历史上下文: `/clear` 相当于开启新会话，避免之前的执行历史的干扰
 - 总结历史上下文：`/compact` 当大项目执行轮次过多时，上下文可能超长，需要将历史上下文进行总结。可以提供用于总结的提示词，告诉claude code怎么总结： `/compact [你的提示词]`
-- 选择文件：`@[filename]` 通过 `@` 选择文件，相当于帮claude code选择文件，加速推理。同时如果在终端中粘贴很长的提示词，比如一个很长的请求让claude code进行debug，可能会出现问题，可以把请求内容粘贴到一个文件里，告诉claude code读文件获取请求详情。
+- 选择文件：`@[filename]` 通过 `@` 选择文件，加速推理。同时如果在终端中粘贴很长的提示词，比如一个很长的请求让claude code进行debug，可能会出现问题，可以把请求内容粘贴到一个文件里，告诉claude code读文件获取请求详情。
 
 ## 工具和权限说明
 如果不配置权限，Claude Code执行终端命令时会询问用户。如果不想过多询问（尤其是在异步进行编程时，可能不会一直盯着执行任务的终端界面），可以将权限配置在 `permissions` 的 `allow`之下。
