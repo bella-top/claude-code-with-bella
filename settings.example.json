@@ -1,0 +1,79 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "YOUR DOMAIN, eg http://example.bela-openapi.com",
+    "ANTHROPIC_AUTH_TOKEN": "YOUR API KEY",
+    "ANTHROPIC_MODEL": "claude-4-sonnet",
+    "ANTHROPIC_SMALL_FAST_MODEL": "claude-3-5-haiku",
+    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "64000"
+  },
+
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)",
+      "Grep(**)",
+      "Glob(**)",
+      "LS(**)",
+
+      "Bash(npm *)",
+      "Bash(yarn *)",
+      "Bash(pnpm *)",
+      "Bash(git *)",
+      "Bash(python *)",
+      "Bash(pip *)",
+      "Bash(node *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(cd *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(rm *)",
+      "Bash(touch *)",
+      "Bash(echo *)",
+      "Bash(which *)",
+      "Bash(whereis *)",
+
+      "Bash(make *)",
+      "Bash(cargo *)",
+      "Bash(go *)",
+      "Bash(javac *)",
+      "Bash(java *)",
+      "Bash(mvn *)",
+      "Bash(gcc *)",
+      "Bash(g++ *)",
+
+      "Bash(npm run *)",
+      "Bash(yarn run *)",
+      "Bash(pytest *)",
+      "Bash(jest *)",
+
+      "WebFetch"
+    ],
+    "deny": [
+      "Bash(curl:*)",
+      "Bash(sudo *)",
+      "Bash(rm -rf /)",
+      "Bash(chmod 777 *)",
+
+      "Read(*.lock)",
+      "Grep(*.lock)",
+      "Edit(*.lock)",
+
+      "Read(**/*application-dev.yml)",
+      "Read(**/*application-prod.yml)",
+      "Read(**/*application-test.yml)",
+      "Read(**/*application-preview.yml)",
+      "Grep(**/*application-dev.yml)",
+      "Grep(**/*application-prod.yml)",
+      "Grep(**/*application-test.yml)",
+      "Grep(**/*application-preview.yml)",
+
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Grep(**/.env)",
+      "Grep(**/.env*)"
+    ]
+  }
+}
