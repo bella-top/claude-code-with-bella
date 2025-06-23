@@ -39,6 +39,11 @@
     ```shell
     cp setting.example.json ~/.claude/settings.json
     ```
+    - 如果希望claude直接修改代码，不需要经过同意可以添加`allow`权限
+      ```
+            "Edit(**)",
+            "Write(**)"
+      ```
     - 修改 `ANTHROPIC_BASE_URL` 和 `ANTHROPIC_AUTH_TOKEN`
     - `ANTHROPIC_MODEL` 用于执行用户的推理任务，可配置为自己想用的模型
     - `ANTHROPIC_SMALL_FAST_MODEL` 用于执行一些简单的后台任务，比如`/clear`和diff写入文件等，可配置为自己想用的模型

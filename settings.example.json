@@ -10,9 +10,6 @@
   "permissions": {
     "allow": [
       "Read(**)",
-      //配置Edit和Write，会直接修改文件。如果不配置这两个权限，修改时会调用IDE mcp工具展示Diff内容，点击Accept后再进行修改
-      "Edit(**)",
-      "Write(**)",
       "Grep(**)",
       "Glob(**)",
       "LS(**)",
