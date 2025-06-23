@@ -1,9 +1,11 @@
 # Claude Code With Bella Openapi In IDE
 
+[![Static Badge](https://img.shields.io/badge/UseIn-Github-blue?style=flat-square)](README_GITHUB_ACTION.md)
+
 ## Overview
 
 - Claude Code是由anthropic-ai推出的一款强大的Code Agent，其主要特点如下：
-  - 功能齐全：集成了主流IDE和GitHub中的cr, issues
+  - 功能齐全：集成了主流IDE和GitHub中的cr, issues，在GitHub中使用：[Claude Code With GitHubActions](README_GITHUB_ACTION.md)
   - 设计合理：其执行任务的过程，完美复刻了一个程序员在进行项目开发时的思考过程，在执行复杂任务上表现很好
   - 不依赖Code Embeddings: 与依赖RAG的Code Agent不同，不需要针对代码训练Embedding模型，只需要LLM模型即可使用，将类似`README`的文件作为Code Base也更像一个人在进行开发
   - 安全性：Code Base不依赖向量库，确保了不会在服务端存储向量化的代码
