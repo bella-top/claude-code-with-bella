@@ -135,7 +135,7 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '@claude 检查提交的代码'
+              body: '@claude 检查提交的代码，使用中文回复'
             })
 EOF
 ```
