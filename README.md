@@ -9,7 +9,7 @@
   - 设计合理：其执行任务的过程，完美复刻了一个程序员在进行项目开发时的思考过程，在执行复杂任务上表现很好
   - 不依赖Code Embeddings: 与依赖RAG的Code Agent不同，不需要针对代码训练Embedding模型，只需要LLM模型即可使用，将类似`README`的文件作为Code Base也更像一个人在进行开发
   - 安全性：Code Base不依赖向量库，确保了不会在服务端存储向量化的代码
-  - 多Agent的设计理念：参考 [devin.ai的多Agent设计理念](https://cognition.ai/blog/dont-build-multi-agents#principles-of-context-engineering)，其中以Claude Code的实现作为例子阐述理念
+  - 单一Agent的设计理念：参考 [devin.ai的Agent设计理念](https://cognition.ai/blog/dont-build-multi-agents#principles-of-context-engineering)，其中以Claude Code的实现作为例子阐述理念
   
 - Bella Openapi 
   - 实现了Claude Code依赖的 `/v1/messsages` 接口
@@ -18,6 +18,10 @@
   - 企业级用户可以在使用统一网关的同时，享受最强Code Agent的全部特性
 
 - 对比Cursor和Windsurf，Claude Code更适合异步编程的场景。Claude Code的Planning更为复杂，执行速度较慢，但是能力更强
+
+## Tech Background
+- [Agent设计](agent_design.md)
+- [Code-Base设计](codebase_Cursor_vs_Claude.md)
 
 ## Dependency
 
