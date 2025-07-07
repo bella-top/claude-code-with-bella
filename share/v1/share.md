@@ -34,7 +34,7 @@
 ## 二、Claude Code：AI编程的标杆工具 (5min)
 
 - Claude Code是由anthropic-ai推出的一款强大的Code Agent，其主要特点如下：
-    - 功能齐全：集成了主流IDE和GitHub中的cr, issues，在GitHub中使用：[Claude Code With GitHubActions](README_GITHUB_ACTION.md)
+    - 功能齐全：集成了主流IDE和GitHub中的cr, issues，在GitHub中使用：[Claude Code With GitHubActions](../../README_GITHUB_ACTION.md)
     - 设计合理：其执行任务的过程，完美复刻了一个程序员在进行项目开发时的思考过程，在执行复杂任务上表现很好
     - 不依赖Code Embeddings: 与依赖RAG的Code Agent不同，不需要针对代码训练Embedding模型，只需要LLM模型即可使用，将类似`README`的文件作为Code Base也更像一个人在进行开发
     - 安全性：Code Base不依赖向量库，确保了不会在服务端存储向量化的代码
@@ -109,8 +109,8 @@
 - **工具生态整合**：20+种专业工具直接服务于核心Agent
 
 **Claude Code Agent设计**
-- [Agent架构](agent_design.md)
-- [CodeBase设计](codebase_Cursor_vs_Claude.md)
+- [Agent架构](../../agent_design.md)
+- [CodeBase设计](../../codebase_Cursor_vs_Claude.md)
 
 ### 4.2 单Agent vs 多Agent的适用边界
 
@@ -209,7 +209,7 @@ Issues自动分析、coding → 提MR后进行Code Review →
 [Jules](https://jules.google.com/)
 
 ### 5.3 使用Claude.ai总结本次分享内容
-[全部聊天](2025_7_4%2018_08_39.txt)
+[全部聊天](../../2025_7_4%2018_08_39.txt)
 - **最开始的提示词**
 ```
 以上是我的述职报告，马上要做的事情为：
@@ -273,7 +273,7 @@ coding单agent有优势是这本质是一个垂直场景。你可以搜索更多
   - 建立可复制的AI应用开发模式
 
 ### 立即行动
-根据[教程](README.md)安装配置Claude Code
+根据[教程](../../README.md)安装配置Claude Code
 
 ---
 
