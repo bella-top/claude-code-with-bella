@@ -114,8 +114,11 @@
 - 选择对话继续: `claude -r`
 - code base: `/init` 生成 CLAUDE.md 文件，作为每个任务的起始提示词，相当于给claude提供进行项目开发的 `README`
 - 清除历史上下文: `/clear` 相当于开启新会话，避免之前的执行历史的干扰
-- 总结历史上下文：`/compact` 当大项目执行轮次过多时，上下文可能超长，需要将历史上下文进行总结。可以提供用于总结的提示词，告诉claude code怎么总结： `/compact [你的提示词]`
-- 选择文件：`@[filename]` 通过 `@` 选择文件，加速推理。同时如果在终端中粘贴很长的提示词，比如一个很长的请求让claude code进行debug，可能会出现问题，可以把请求内容粘贴到一个文件里，告诉claude code读文件获取请求详情。
+- 总结历史上下文: `/compact` 当大项目执行轮次过多时，上下文可能超长，需要将历史上下文进行总结。可以提供用于总结的提示词，告诉claude code怎么总结： `/compact [你的提示词]`
+- 选择文件: `@[filename]` 通过 `@` 选择文件，加速推理。同时如果在终端中粘贴很长的提示词，比如一个很长的请求让claude code进行debug，可能会出现问题，可以把请求内容粘贴到一个文件里，告诉claude code读文件获取请求详情。
+- 自动修改模式：按一次`shift + Tab`，进入`自动修改模式`，修改文件前不会询问
+- 规划模式：按两次`shift + Tab`，进入`planning模式`，先和使用者制度计划，确认计划后再执行，适用于复杂任务场景
+- 开启深度思考：提你的示词输入完成后，追加输入`think hard`或`think harder`
 
 ## 工具和权限说明
 如果不配置权限，Claude Code执行终端命令时会询问用户。如果不想过多询问（尤其是在异步进行编程时，可能不会一直盯着执行任务的终端界面），可以将权限配置在 `permissions` 的 `allow`之下。
@@ -167,3 +170,21 @@
   }
 }
 ```
+
+## 实用的高级功能
+
+### 自定义指令
+```shell
+mkdir ~/.claude/command
+echo "按照我们的编码标准修复GitHub Issues #$ARGUMENTS" > .claude/commands/fix-issue.md
+```
+使用：
+```shell
+/project:fix-issue 123
+```
+**注意**：可以将一些常用提示词，作为命令输入
+
+### 自定义mcp
+官方文档：https://docs.anthropic.com/zh-CN/docs/claude-code/mcp
+
+**注意**： 不仅可以在Claude Code中配置MCP服务，还可以将Claude Code启动为MCP服务器，命令：`claude mcp serve`
