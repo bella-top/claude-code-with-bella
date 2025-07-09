@@ -26,6 +26,7 @@
 - 生成的代码风格与整个项目更一致
 - 执行过程中的容错率更高，几乎不会出现执行异常导致本次任务失败的请情况
 - 既有cli支持本地开发，又集成了GitHub的code review和issues处理等功能
+- Claude Code Cli提供了非交互式命令，可借此将其扩展为自己的应用
 - 生成的代码准确率高，几乎在不修改的情况下都可以直接执行
 - 可以直接集成公司的统一网关Bella-Openapi，团队可统一AI工具，更有利于使用经验的复制和沉淀
 
@@ -51,6 +52,9 @@
 
 ### 4.2 GitHub集成
 [Claude-Code-GitHub快速集成攻略](../../README_GITHUB_ACTION.md)
+
+### 4.3 在自建应用中集成
+[Claude-Code代码集成指南](../../integration-guide.md)
 
 ## 五、让Claude Code更好地为你工作
 
@@ -145,6 +149,8 @@
 - 明确约束条件：比如按照xxx的实现、可选择的技术栈和中间件、性能要求等
 
 ### 5.6 案例分享
+
+#### 代码实现
 [Lark文档解析支持文件删除Issues](https://github.com/LianjiaTech/bella-openapi/issues/117)
 
 **背景**：实现文档解析服务的任务管理，支持文件删除功能
@@ -170,6 +176,9 @@
 - Claude Code能够理解复杂的业务逻辑和技术权衡
 - 通过多轮对话，能够不断优化方案
 - 生成的代码质量高，符合项目整体风格
+
+#### 技术调研
+[Claude Code 技术调研任务使用案例](../../claude-code-technical-research-case-study.md)
 
 
 ## 六、立即行动

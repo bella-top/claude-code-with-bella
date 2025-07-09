@@ -25,12 +25,14 @@
 
 ## Dependency
 
-### Bella-openapi:
+### Bella-openapi
 
 - [GitHub](https://github.com/LianjiaTech/bella-openapi)
 - [文档](https://doc.bella.top/docs/bella-openapi/intro)
 
-### Claude Code: [官网地址](https://docs.anthropic.com/en/docs/claude-code/overview)
+### Claude Code 
+
+- [官网地址](https://docs.anthropic.com/en/docs/claude-code/overview)
 
 - 安装claud-code:
 
@@ -188,3 +190,16 @@ echo "按照我们的编码标准修复GitHub Issues #$ARGUMENTS" > .claude/comm
 官方文档：https://docs.anthropic.com/zh-CN/docs/claude-code/mcp
 
 **注意**： 不仅可以在Claude Code中配置MCP服务，还可以将Claude Code启动为MCP服务器，命令：`claude mcp serve`
+
+### 非交互式命令
+```shell
+claude -p "按照我们的编码标准修复GitHub Issues 123"
+```
+**注意**：此命令可以在自己的服务中直接调用Claude Code，实现自己需要的功能，附[使用攻略](integration-guide.md)
+
+
+## 常见问题
+### IDE中新增的文件没有显示
+**原因**：这是由于这些IDE的文件索引未刷新导致的，原因大概率是其刷新索引依赖的文件系统的事件通知丢失了或者有延迟，且IDE自身轮询刷新的时间间隔较长。在使用JetBrains的IDE时这个问题比较明显，因为文件索引机制更为复杂。
+
+**解决方案**：手动刷新，右键项目目录 → "Reload from Disk"
