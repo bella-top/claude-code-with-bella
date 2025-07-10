@@ -41,7 +41,9 @@
     ```
     - IDE集成：
         - JetBrains IDE： Plugin Market安装
-        - VS Code(包括Cursor和windsurf)： 在IDE中打开终端执行 `claude` 命令自动安装
+        - VS Code(包括Cursor和windsurf)： 
+          - 在IDE中打开终端执行 `claude` 命令自动安装 （完成配置后才能执行）
+          - 或者，打开插件市场安装
 
 - 配置：
     ```shell
