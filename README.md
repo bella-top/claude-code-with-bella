@@ -112,6 +112,8 @@
 
 ## Claude Code常用命令
 
+**注意**：启动claude code后，在输入框输入`/`后，会出现快捷命令列表，可以前缀匹配，用`方向键`选择快捷命令，点击`tab`，可以选中快捷命令，点击`enter`会直接执行命令。
+
 - Debug启动：`claude -d`
 - help：`claude -h`
 - 继续上一次的对话：`claude -c`
@@ -123,6 +125,7 @@
 - 自动修改模式：按一次`shift + Tab`，进入`自动修改模式`，修改文件前不会询问
 - 规划模式：按两次`shift + Tab`，进入`planning模式`，先和使用者制度计划，确认计划后再执行，适用于复杂任务场景
 - 开启深度思考：提你的示词输入完成后，追加输入`think hard`或`think harder`
+- 添加额外的工作目录：`/add-dir`，通常用于多个项目的联合开发，或者依赖其他项目的背景知识
 
 ## 工具和权限说明
 如果不配置权限，Claude Code执行终端命令时会询问用户。如果不想过多询问（尤其是在异步进行编程时，可能不会一直盯着执行任务的终端界面），可以将权限配置在 `permissions` 的 `allow`之下。
@@ -178,9 +181,10 @@
 ## 实用的高级功能
 
 ### 自定义指令
+**官方文档**：https://docs.anthropic.com/zh-CN/docs/claude-code/slash-commands#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%9C%E6%9D%A0%E5%91%BD%E4%BB%A4
 ```shell
-mkdir ~/.claude/command
-echo "按照我们的编码标准修复GitHub Issues #$ARGUMENTS" > .claude/commands/fix-issue.md
+mkdir ~/.claude/commands
+echo "按照我们的编码标准修复GitHub Issues #$ARGUMENTS" > ~/.claude/commands/fix-issue.md
 ```
 使用：
 ```shell
@@ -191,7 +195,33 @@ echo "按照我们的编码标准修复GitHub Issues #$ARGUMENTS" > .claude/comm
 ### 自定义mcp
 官方文档：https://docs.anthropic.com/zh-CN/docs/claude-code/mcp
 
-**注意**： 不仅可以在Claude Code中配置MCP服务，还可以将Claude Code启动为MCP服务器，命令：`claude mcp serve`
+#### 推荐实用的mcp工具
+
+**1.** 获取依赖代码库的最新版本文档和代码示例： https://github.com/upstash/context7
+```shell
+claude mcp add -s user context7 -- npx -y @upstash/context7-mcp
+```
+
+**2.** deepwiki：https://cognition.ai/blog/deepwiki-mcp-server
+```shell
+claude mcp add -s user -t http deepwiki https://mcp.deepwiki.com/mcp
+```
+
+**可以添加使用以上两个工具的提示词：**
+```shell
+echo "- When the user requests code examples, setup or configuration steps, or library/API documentation, you can use context7 tool. 
+- When the user need to conduct research on GitHub's open-source code repository, you can use the DeepWiki tool" > ~/.claude/commands/mcp-tool.md
+```
+
+**使用：**
+```shell
+/user:mcp-tool Amazon Bedrock RAG库应该怎么使用
+```
+**使用示例：**
+[context7使用示例](context7.example.md)
+
+**3.将Claude Code集成为mcp服务**： 
+不仅可以在Claude Code中配置MCP服务，还可以将Claude Code启动为MCP服务器，命令：`claude mcp serve`
 
 ### 非交互式命令
 ```shell

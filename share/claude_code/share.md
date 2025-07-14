@@ -176,6 +176,11 @@
 - Claude Code能够理解复杂的业务逻辑和技术权衡
 - 通过多轮对话，能够不断优化方案
 - 生成的代码质量高，符合项目整体风格
+- 写代码时依赖第三方服务/sdk时的几种方式：
+    - 提供api/sdk的使用页面地址，claude code会使用`webFetch`工具读取
+    - 直接复制api/sdk的调用方式到输入框
+    - 拉取代码到本地，使用`/add-dir`将第三方项目代码添加为工作目录
+    - 使用context7或deepwiki等mcp工具
 
 #### 技术调研
 [Claude Code 技术调研任务使用案例](../../claude-code-technical-research-case-study.md)
